@@ -15,13 +15,14 @@ public class AnagramsString {
 		firstString = firstString.replaceAll("\\s+", "");
 		secondString = secondString.replaceAll("\\s+", "");
 
-		System.out.println(firstString + " " + secondString);
+		System.out.println(firstString + " " + secondString); 
 
 		if (checkAnagrams(firstString, secondString)) {
 			System.out.println("Strings are Anagrams ");
 		} else {
 			System.out.println("Strings are not Anagrams ");
 		}
+		scn.close();
 	}
 
 	private static boolean checkAnagrams(String firstString, String secondString) {
