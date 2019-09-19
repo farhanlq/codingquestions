@@ -2,6 +2,11 @@ package com.program.uri;
 
 import java.util.Scanner;
 
+
+/**
+ * @author Farhan Laeeq (Local)
+ *
+ */
 public class OddNumbers {
 
 	public static void main(String[] args) {
