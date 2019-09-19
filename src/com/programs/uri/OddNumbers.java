@@ -1,4 +1,4 @@
-package com.program.uri;
+package com.programs.uri;
 
 import java.util.Scanner;
 
