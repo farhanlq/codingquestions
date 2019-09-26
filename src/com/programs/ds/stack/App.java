@@ -1,4 +1,4 @@
-package com.programs.ds;
+package com.programs.ds.stack;
 
 public class App {
 
