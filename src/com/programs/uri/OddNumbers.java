@@ -13,7 +13,7 @@ public class OddNumbers {
 		Scanner scn = new Scanner(System.in);
 		int num = scn.nextInt();
 		for (int i = 0; i < num; i++) {
-			if (i % 2 != 0) {
+			if (i % 2 == 1) {
 				System.out.println(i);
 			}
 		}
