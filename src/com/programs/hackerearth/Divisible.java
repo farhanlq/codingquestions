@@ -1,47 +1,35 @@
 package com.programs.hackerearth;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.util.Scanner;
 
 public class Divisible {
 
-	public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        PrintWriter wr = new PrintWriter(System.out);
-         int N = Integer.parseInt(br.readLine().trim());
-         String[] arr_A = br.readLine().split(" ");
-         int[] A = new int[N];
-         for(int i_A=0; i_A<arr_A.length; i_A++)
-         {
-         	A[i_A] = Integer.parseInt(arr_A[i_A]);
-         }
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		int N = scn.nextInt();
+		int[] originalArray = new int[N];
 
-         String out_ = solve(A);
-         System.out.println(out_);
-
-         wr.close();
-         br.close();
-    }
-    static String solve(int[] A){
-    int[] firstArray = new int[A.length/ 2];
-		int[] secondArray = new int[A.length / 2];
+		for (int i = 0; i < N; i++) {
+			originalArray[i] = scn.nextInt();
+		}
+		int[] firstArray = new int[N / 2];
+		int[] secondArray = new int[N / 2];
 
 		String number = "";
 
 		for (int i = 0; i < firstArray.length; i++) {
-			firstArray[i] = A[i];
+			firstArray[i] = originalArray[i];
 			number = number + String.valueOf(firstArray[i]).charAt(0);
 		}
 
 		for (int i = secondArray.length-1; i >=0; i--) {
-			secondArray[i] = A[A.length - 1 - i];
+			secondArray[i] = originalArray[originalArray.length - 1 - i];
 			number = number + (secondArray[i] % 10);
 		}
-		 
-		  
-		 return (Integer.parseInt(number)%11 == 0) ? "OUI" : "NON";
-    
-    }
+		 if(Integer.parseInt(number)%11 == 0) {
+			 
+		 }
+		 String result = (Integer.parseInt(number)%11 == 0) ? "OUI" : "NON";
+		System.out.println(result);
+	}
 }
