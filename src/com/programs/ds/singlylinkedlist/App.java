@@ -9,10 +9,11 @@ public class App {
 		myList.insertFirst(500);
 		myList.insertFirst(800);
 		myList.insertLast(901);
-		//myList.deleteLast();
-		//myList.deleteFirst();
+		// myList.deleteLast();
+		// myList.deleteFirst();
 		myList.insertAtPosition(34, 3);
+		myList.deleteAtPosition(4);
 		myList.displayList();
-		
+
 	}
 }

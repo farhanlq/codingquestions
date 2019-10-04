@@ -11,6 +11,7 @@ public class SinglyLinkedList {
 		return (first == null);
 	}
 
+	// insert at first position
 	public void insertFirst(int data) {
 		Node newNode = new Node();
 		newNode.data = data;
@@ -18,12 +19,14 @@ public class SinglyLinkedList {
 		first = newNode;
 	}
 
+	// delete from first position
 	public Node deleteFirst() {
 		Node temp = first;
 		first = first.next;
 		return temp;
 	}
 
+	// display list
 	public void displayList() {
 		System.out.println("List (first --> last)");
 		Node current = first;
@@ -34,6 +37,7 @@ public class SinglyLinkedList {
 		System.out.println();
 	}
 
+	// insert at last position
 	public void insertLast(int data) {
 		Node current = first;
 		while (current.next != null) {
@@ -44,6 +48,7 @@ public class SinglyLinkedList {
 		current.next = newNode;
 	}
 
+	// delete from last position
 	public Node deleteLast() {
 		Node current = first;
 		Node temp = first.next;
@@ -55,6 +60,7 @@ public class SinglyLinkedList {
 		return temp;
 	}
 
+	// insert at the given position
 	public void insertAtPosition(int data, int pos) {
 		Node current = first;
 		for (int i = 1; i < pos - 1; i++) {
@@ -64,6 +70,19 @@ public class SinglyLinkedList {
 		newNode.data = data;
 		newNode.next = current.next;
 		current.next = newNode;
+
+	}
+
+	// delete from the given position
+	public Node deleteAtPosition(int pos) {
+		Node current = first;
+		Node temp = first.next;
+		for (int i = 1; i < pos - 1; i++) {
+			temp = temp.next;
+			current = current.next;
+		}
+		current.next = temp.next;
+		return temp;
 
 	}
 }
