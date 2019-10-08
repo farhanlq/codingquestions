@@ -9,7 +9,7 @@ public class TimeConversion {
 		Scanner scn = new Scanner(System.in);
 		int seconds = scn.nextInt();
 		int hour = seconds / 3600;
-		int month = seconds / 60;
+		int month = ((seconds / 60) > 60) ? (seconds / 60) % 60 : seconds / 60;
 		int second = seconds % 60;
 		System.out.println(hour + ":" + month + ":" + second);
 	}
