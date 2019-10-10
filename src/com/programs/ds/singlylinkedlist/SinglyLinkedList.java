@@ -21,7 +21,7 @@ public class SinglyLinkedList {
 
 	// delete from first position
 	public Node deleteFirst() {
-		Node temp = first;
+		Node temp = first; 
 		first = first.next;
 		return temp;
 	}
