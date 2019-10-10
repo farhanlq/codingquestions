@@ -27,13 +27,12 @@ public class BinarySearch {
 		int p = 0, r = a.length - 1;
 		while (p <= r) {
 			int q = (p + r) / 2;
-			if (a[q] == x) {
+			if (a[q] == x)
 				return q;
-			} else if (a[q] > x) {
+			else if (a[q] > x)
 				r = q - 1;
-			} else {
+			else
 				p = q + 1;
-			}
 		}
 		return -1;
 	}
