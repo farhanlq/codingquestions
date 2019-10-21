@@ -6,11 +6,19 @@ public class BalancedBrackets {
 		int stackSize = str.length();
 		Stack stack = new Stack(stackSize);
 		for (int i = 0; i < stackSize; i++) {
-			if (str.charAt(i) == '{' || str.charAt(i) == '(' || str.charAt(i) == '[') {
-				stack.push(str.charAt(i));
+
+			char current = str.charAt(i);
+			if (current == '{' || current == '(' || current == '[') {
+				stack.push(current);
 			}
-			if (str.charAt(i) == '}' || str.charAt(i) == ')' || str.charAt(i) == ']') {
-				stack.pop();
+			if (current == '}' || current == ')' || current == ']') {
+				if (stack.isEmpty())
+					return "NO";
+				char last = stack.peak();
+				if (current == '}' && last == '{' || current == ')' && last == '(' || current == ']' && last == '[')
+					stack.pop();
+				else
+					return "NO";
 			}
 		}
 		if (stack.isEmpty())
